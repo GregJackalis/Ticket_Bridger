@@ -1,0 +1,7 @@
+26/03 (SESSIONS WITH PHP)
+- Changed html files into php files
+- Added php parts at the start of all of the above. This part is used to call another php function 
+- The php function called is responsible to echo a set of javascript commands in order to add classes to a few html elements
+- The website also needs a logout button so that the session won't save the values if the user is signed in or not
+- To tackle the issue mentioned above, I made a tempLogout.js file which is called automatically when the browser window is closed,
+  then once the browser window is closed the script is calling another tempLogout.php script which destroys and unsets the session
