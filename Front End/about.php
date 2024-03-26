@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['loggedIn'])) {
+  $_SESSION['loggedIn'] = 'nah';
+}
+
+include 'PHPtoJS.php';
+
+if ($_SESSION['loggedIn'] == 'ye') {
+  addClassesIcons();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,11 +30,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    
-    <link rel="stylesheet" href="contact.css" />
-
+    <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" type="text/css" href="footer.css" />
-    
+    <link rel="stylesheet" href="ourTeam.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -29,17 +41,17 @@
     <link rel="stylesheet" href="home.css" />
     <title>Ticket Bridger</title>
   </head>
-  <body class="ContactPage">
+  <body class="AboutPage">
     <header>
       <div class="navBar">
         <div class="logo">
-          <img src="Images/LogoImage.png" alt="logoImage" onclick="window.location.href='home.html';"/>
+          <img src="Images/LogoImage.png" alt="logoImage" onclick="window.location.href='home.php';"/>
         </div>
         <ul class="links">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="about.php">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.php">Contact Us</a></li>
         </ul>
         <div class="actionButtons">
           <button class="getStarted">Get Started</button>
@@ -52,10 +64,10 @@
       </div>
 
       <div class="dropDownMenu">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
         <button class="getStarted">Get Started</button>
       </div>
     </header>
@@ -141,86 +153,101 @@
         <i class="fa-solid fa-xmark"></i>
       </span>
     </div>
-  <!-- Contact -->
-    <section class="contact">
-        <div class="content">
-          <h1>Contact Us</h1>
+
+    <section class="about">
+      <div class="main">
+        <div class="aboutImageContainer">
+          <img
+            src="Images/photo-1563841930606-67e2bce48b78.avif"
+            class="aboutImage"
+            id="aboutImage"
+          />
         </div>
-        <div class="contact-container">
-         <div class="contactInfo">
-            <div class="box">
-               <div class="icon">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-               </div>
-               <div class="text">
-                <h3>13 Kodrigktonos & 94 Patission Ave, 104 34 | 107</h3>
-               
-               </div>
+        <div class="about-text">
+          <h1>About us</h1>
+          <h3>Ticket<span> Bridger</span></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            obcaecati porro fugit cumque libero perferendis quod laudantium nam
+            quibusdam est aspernatur nobis sint laboriosam, aliquid consequuntur
+            iusto sunt ad! Rem molestiae corrupti sunt accusantium reprehenderit
+            optio dolor expedita praesentium laudantium commodi nisi quis
+            tempora possimus fugiat ex at quam repudiandae, quos assumenda odio
+            dicta blanditiis debitis. Impedit porro praesentium mollitia.
+          </p>
+          <!--May a button hear that leeds to contact us-->
+        </div>
+      </div>
+    </section>
+
+    <div class="team-section">
+      <div class="team-container">
+        <div class="row">
+          <div class="title">
+            <h1>our team</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Reprehenderit cupiditate sunt tenetur at mollitia odit saepe
+              adipisci ducimus dignissimos. At?
+            </p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="card">
+            <div class="image-section">
+              <img src="Images/Kostas.png" />
             </div>
-            <div class="box">
-              <div class="icon">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-              </div>
-              <div class="text">
-               <h3>697123456</h3>
-               
-              </div>
-           </div>
-           <div class="box">
-             <div class="icon">
-               <i class="fa fa-envelope" aria-hidden="true"></i>
-             </div>
-             <div class="text">
-               <h3>TicketBridger/Support@gmail.com</h3>
-               
-             </div>
+            <div class="content">
+              <h3>Kostas</h3>
+              <h4>Database Designer</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Nostrum illo explicabo architecto.
+              </p>
             </div>
           </div>
-
-          <div class="ContactForm">
-            <form target="_blank" action="https://formsubmit.co/gjpetrakas@gmail.com" method="post">
-             <h2 style="color: #fff;">Send Message</h2>
-             <div class="inputBox">                   
-               <input type="text" name="name"  required="required"> 
-               <span>Full name</span>                          
-             </div>
-             <div class="inputBox">
-               <input type="email" name="email"  required="required"> 
-               <span>email</span>  
-             </div>
-
-             <div class="inputBox"> 
-               <textarea   required="required" name="message"></textarea>  
-               <span>Type your Message...</span>     
-             </div>
-
-             <div class="inputBox">
-               <label for="Problem" style="color: #fff;">What problem do you have?</label>
-               <select class="selected" name="Problem" >
-                 <option>Refund</option>
-                 <option>Unable to use my ticket</option>
-                 <option>Ticket not received</option>
-                 <option>Scam</option>
-                 <option>Other</option>
-               </select>
-             </div>
-                          
-            
-             <div class="inputBox">
-               <input type="submit" name="" value="Send"  style="border-radius: 25px; ">
-                           
-             </div>
-            </form>
-
+          <div class="card">
+            <div class="image-section">
+              <img src="Images/Gregory.png" />
+            </div>
+            <div class="content">
+              <h3>Grigoris</h3>
+              <h4>Back-end Developer</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Nostrum illo explicabo architecto.
+              </p>
+            </div>
           </div>
-          
-
-
+          <div class="card">
+            <div class="image-section">
+              <img src="Images/Giorgos.png" />
+            </div>
+            <div class="content">
+              <h3>George</h3>
+              <h4>Web Developer/Designer</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Nostrum illo explicabo architecto.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image-section">
+              <img src="Images/Fanis.png" />
+            </div>
+            <div class="content">
+              <h3>Fanis</h3>
+              <h4>Web Developer/Designer</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Nostrum illo explicabo architecto.
+              </p>
+            </div>
+          </div>
         </div>
-       
-      </section>
-
-
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <div class="FOOTER">
@@ -229,8 +256,8 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="about.html">About us</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="about.php">About us</a></li>
+              <li><a href="contact.php">Contact us</a></li>
               <li><a href="services.html">Services</a></li>
             </ul>
           </div>
@@ -266,7 +293,7 @@
     </div>
 
     <script src="home.js"></script>
-   
+    <script src="aboutImages.js"></script>
     <script src="json_handler.js"></script>
   </body>
 </html>

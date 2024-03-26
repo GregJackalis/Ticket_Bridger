@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['loggedIn'])) {
+  $_SESSION['loggedIn'] = 'nah';
+}
+
+include 'PHPtoJS.php';
+
+if ($_SESSION['loggedIn'] == 'ye') {
+  addClassesIcons();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,13 +60,13 @@
     <header>
       <div class="navBar">
         <div class="logo">
-          <img src="Images/LogoImage.png" alt="logoImage" onclick="window.location.href='home.html';"/>
+          <img src="Images/LogoImage.png" alt="logoImage" onclick="window.location.href='home.php';"/>
         </div>
         <ul class="links">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="about.php">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.php">Contact Us</a></li>
         </ul>
         <div class="actionButtons">
           <button class="getStarted">Get Started</button>
@@ -66,10 +80,10 @@
 
       <!--dropdown menu-->
       <div class="dropDownMenu">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
         <button class="getStarted">Get Started</button>
       </div>
     </header>
@@ -306,8 +320,8 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="about.html">About us</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="about.php">About us</a></li>
+              <li><a href="contact.php">Contact us</a></li>
               <li><a href="services.html">Services</a></li>
             </ul>
           </div>

@@ -1,4 +1,12 @@
 <?php
+
+    // CODE FOR SESSION WITH PHP 
+    session_start();
+
+    if (!isset($_SESSION['loggedIn'])) {
+        $_SESSION['loggedIn'] = 'nah';
+    }
+
     // error_reporting(0);
     ini_set('display_errors', 1);
 
@@ -95,15 +103,21 @@
             if ($sqlResponse == "cred") {
                 $response["status"] = "missing cred error";
                 $response["message"] = "Missing Credentials!";
+                $_SESSION['loggedIn'] = 'nah';
+
             } else if($sqlResponse == "rec") {
                 $response["status"] = "no records";
                 $response["message"] = "No records found!";
+                $_SESSION['loggedIn'] = 'nah';
+
             } else if($sqlResponse == "inv") {
                 $response["status"] = "login error";
                 $response["message"] = "Invalid Credentials!";
+                $_SESSION['loggedIn'] = 'nah';
             } else { // THIS IS THE SUCCESS CASE IN THE LOGIN PHASE
                 $response["status"] = "login success";
                 $response["message"] = $sqlResponse;
+                $_SESSION['loggedIn'] = 'ye';
             }
         }
     }

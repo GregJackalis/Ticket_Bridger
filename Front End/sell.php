@@ -26,13 +26,13 @@
     <header>
         <div class="navBar">
         <div class="logo">
-            <img src="Images/LogoImage.png" alt="logoImage" onclick="window.location.href='home.html';"/>
+            <img src="Images/LogoImage.png" alt="logoImage" onclick="window.location.href='home.php';"/>
         </div>
         <ul class="links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
         </ul>
         <div class="actionButtons">
             <button class="getStarted close">Get Started</button>
@@ -46,10 +46,10 @@
     
         <!--dropdown menu-->
         <div class="dropDownMenu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
             <button class="getStarted">Get Started</button>
         </div>
     </header>
